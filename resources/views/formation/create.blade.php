@@ -6,7 +6,7 @@
                 <h4>Formulaire d'ajout d'une formation</h4>
             </div>
             <div class="card-body">
-                <form action="/store" method="POST">
+                <form action="/store2" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">Nom de la formation</label>
@@ -25,7 +25,7 @@
                         <label for="">Referentiel</label>
                         <select name="ref" id="" class="form-control">
                             <option value="" selected disabled>--Choix du referentiel--</option>
-                    
+
                             <option value=""></option>
                         </select>
                         <label for="">Date de debut</label>

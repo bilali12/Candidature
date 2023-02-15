@@ -18,21 +18,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('candidat.index');
+    return view('welcom');
 });
 
 Route::get('/candidat/index', [CandidatController::class, 'index'])->name('candidat.index');
 Route::get('/candidat/create', [CandidatController::class, 'create'])->name('candidat.create');
-Route::post('/store', [CandidatController::class, 'store']);
+Route::post('/store1', [CandidatController::class, 'store']);
 
 Route::get('/formation/create', [FormationController::class, 'create'])->name('formation.create');
 Route::get('/formation/index', [FormationController::class, 'index'])->name('formation.index');
-Route::post('/store', [FormationController::class, 'store']);
+Route::post('/store2', [FormationController::class, 'store']);
 
 Route::get('/referentiel/create', [ReferentielController::class, 'create'])->name('referentiel.create');
 Route::get('/referentiel/index', [ReferentielController::class, 'index'])->name('referentiel.index');
-Route::post('/store', [ReferentielController::class, 'store']);
+Route::post('/store3', [ReferentielController::class, 'store']);
 
 Route::get('/type/create', [TypeController::class, 'create'])->name('type.create');
 Route::get('/type/index', [TypeController::class, 'index'])->name('type.index');
-Route::post('/store', [TypeController::class, 'store']);
+Route::post('/store4', [TypeController::class, 'store']);

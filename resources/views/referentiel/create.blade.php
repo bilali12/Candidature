@@ -6,11 +6,11 @@
                 <h4>Formulaire d'ajout d'un referentiel</h4>
             </div>
             <div class="card-body">
-                <form action="/store" method="POST">
+                <form action="/store3" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">Libelle du referentiel</label>
-                        <input type="text" class="form-control" name="libelle">
+                        <input type="text" class="form-control" name="libelle_ref">
                         <label for="">Horaire</label>
                         <input type="number" step="0.01" min="1" class="form-control" name="duree">
                         <label for="">Validate</label>
@@ -22,6 +22,9 @@
                         <label for="">Type</label>
                         <select name="type" id="" class="form-control">
                             <option value="-1" selected disabled>--choix du type--</option>
+                            @foreach ($types as $type)
+                                <option value="{{$type->id}}">{{$type->libelle}}</option>
+                            @endforeach
                         </select>
                         <br><br>
                         <div class="row">

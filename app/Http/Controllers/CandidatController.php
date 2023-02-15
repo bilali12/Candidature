@@ -43,9 +43,8 @@ class CandidatController extends Controller
         $candidat->age = intval($request->age);
         $candidat->sexe = $request->sexe;
         $candidat->niveau_etude = $request->niveau;
-
         $candidat->save();
-    
+
 
         return redirect('/candidat/create')->with('flash_message', 'etudiant ajouté');
     }

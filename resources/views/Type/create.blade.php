@@ -6,7 +6,7 @@
                 <h4>Formulaire d'ajout d'un type</h4>
             </div>
             <div class="card-body">
-                <form action="/store" method="POST">
+                <form action="/store4" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">Libelle du type</label>

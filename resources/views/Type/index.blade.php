@@ -3,7 +3,7 @@
     <div class="container col-md-8">
         <div class="card">
             <div class="card-header">
-                <h4>Liste des formations</h4>
+                <h4>Liste des types</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">

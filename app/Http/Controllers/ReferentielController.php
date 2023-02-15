@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Referentiel;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ReferentielController extends Controller
@@ -24,7 +25,8 @@ class ReferentielController extends Controller
      */
     public function create()
     {
-        return view('referentiel.create');
+        $types = Type::all();
+        return view('referentiel.create')->with(compact('types'));
     }
 
     /**
@@ -35,7 +37,15 @@ class ReferentielController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $referentiel = new Referentiel();
+
+        $referentiel->libelle = $request->libelle_ref;
+        $referentiel->horaire = floatval($request->horaire);
+        $referentiel->validated = intval($request->validated);
+        $referentiel->type_id = intval($request->type);
+        $referentiel->save();
+
+        return redirect('/referentiel/create')->with('flash_message', 'referentiel ajouté');
     }
 
     /**

@@ -36,7 +36,11 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $type = new Type();
+        $type->libelle = $request->libelle;
+
+        $type->save();
+        return redirect('type/create')->with('flash_message', 'type ajouté');
     }
 
     /**

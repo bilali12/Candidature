@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->integer('age');
             $table->string('niveau_etude');
-            $table->boolean('sexe');
+            $table->string('sexe');
             $table->timestamps();
         });
     }

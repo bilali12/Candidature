@@ -6,7 +6,7 @@
                 <h4>Formulaire d'ajout d'un candidat</h4>
             </div>
             <div class="card-body">
-                <form action="/store" method="POST">
+                <form action="/store1" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">Nom</label>
