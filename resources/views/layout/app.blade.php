@@ -62,8 +62,8 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{{route('candidatformation')}}">Choix Formation</a></li>
-                  <li><a class="dropdown-item" href="#">Nombre de candidat par formation</a></li>
-                  <li><a class="dropdown-item" href="#">Nombre de formation par referentiel</a></li>
+                  <li><a class="dropdown-item" href="{{route('nombredecandidatparformation')}}">Nombre de candidat par formation</a></li>
+                  <li><a class="dropdown-item" href="{{route('nombredeformationparref')}}">Nombre de formation par referentiel</a></li>
                   <li><a class="dropdown-item" href="#">Repartition totale des candidats par sexe</a></li>
                   <li><a class="dropdown-item" href="#">Repartition des formations par type</a></li>
                 </ul>

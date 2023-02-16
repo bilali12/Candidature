@@ -3,6 +3,8 @@
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\CandidatFormationController;
 use App\Http\Controllers\FormationController;
+use App\Http\Controllers\NombreDeCandidatParFormation;
+use App\Http\Controllers\NombreDeFormationParRef;
 use App\Http\Controllers\ReferentielController;
 use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +42,7 @@ Route::post('/store4', [TypeController::class, 'store']);
 
 Route::get('/candidat/formation/create', [CandidatFormationController::class, 'create'])->name('candidatformation');
 Route::post('/store5', [CandidatFormationController::class, 'store']);
+
+Route::get('/nombre/candidat/formation', [NombreDeCandidatParFormation::class, 'index'])->name('nombredecandidatparformation');
+Route::get('/nombre/formation/referentiel', [NombreDeFormationParRef::class, 'index'])->name('nombredeformationparref');
+
