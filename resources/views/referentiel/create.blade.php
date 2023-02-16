@@ -12,7 +12,7 @@
                         <label for="">Libelle du referentiel</label>
                         <input type="text" class="form-control" name="libelle_ref">
                         <label for="">Horaire</label>
-                        <input type="number" step="0.01" min="1" class="form-control" name="duree">
+                        <input type="number" step="0.01" min="1" class="form-control" name="horaire">
                         <label for="">Validate</label>
                         <select name="validated" id="" class="form-control">
                             <option value="-1" selected disabled>--choix de la validation--</option>

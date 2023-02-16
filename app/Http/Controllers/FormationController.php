@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Formation;
+use App\Models\Referentiel;
+
 class FormationController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class FormationController extends Controller
     public function index()
     {
         $formations = Formation::all();
-        return view('formation.index', ['formations'=> $formations]);
+        $referentiels = Referentiel::all();
+        return view('formation.index', ['formations'=> $formations])->with(compact('referentiels'));
     }
 
     /**
@@ -25,7 +28,8 @@ class FormationController extends Controller
      */
     public function create()
     {
-        return view('formation.create');
+        $referentiels = Referentiel::all();
+        return view('formation.create')->with(compact('referentiels'));
     }
 
     /**
@@ -42,6 +46,7 @@ class FormationController extends Controller
         $formation->description = $request->description;
         $formation->is_started = intval($request->is_started);
         $formation->date_debut = $request->date_debut;
+        $formation->referentiel_id = intval($request->ref);
 
         $formation->save();
         return redirect('/formation/create')->with('flash_message', 'formation ajouté');

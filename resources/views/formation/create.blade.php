@@ -25,8 +25,10 @@
                         <label for="">Referentiel</label>
                         <select name="ref" id="" class="form-control">
                             <option value="" selected disabled>--Choix du referentiel--</option>
+                            @foreach ($referentiels as $referentiel )
+                            <option value="{{$referentiel->id}}">{{$referentiel->libelle}}</option>
+                            @endforeach
 
-                            <option value=""></option>
                         </select>
                         <label for="">Date de debut</label>
                         <input type="date" class="form-control" name="date_debut">

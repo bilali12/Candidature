@@ -24,10 +24,20 @@
                             <td>{{$formation->id}}</td>
                             <td>{{$formation->nom}}</td>
                             <td>{{$formation->duree}}</td>
-                            <td>{{$formation->is_started}}</td>
+                            @if ($formation->is_started == 1)
+                            <td>OUI</td>
+                            @endif
+                            @if ($formation->is_started == 0)
+                            <td>NON</td>
+                            @endif
                             <td>{{$formation->description}}</td>
                             <td>{{$formation->date_debut}}</td>
-                            <td></td>
+                            @foreach ($referentiels as $ref )
+                            @if ($ref->id == $formation->referentiel_id)
+                            <td>{{$ref->libelle}}</td>
+                            @endif
+                            @endforeach
+
                             <td><a href="">editer</a></td>
                             <td><a href="" class="text-danger">supprimer</a></td>
                         </tr>

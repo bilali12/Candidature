@@ -15,7 +15,8 @@ class ReferentielController extends Controller
     public function index()
     {
         $referentiels = Referentiel::all();
-        return view('referentiel.index', ['referentiels'=>$referentiels]);
+        $types = Type::all();
+        return view('referentiel.index', ['referentiels'=>$referentiels])->with(compact('types'));
     }
 
     /**
@@ -40,7 +41,7 @@ class ReferentielController extends Controller
         $referentiel = new Referentiel();
 
         $referentiel->libelle = $request->libelle_ref;
-        $referentiel->horaire = floatval($request->horaire);
+        $referentiel->horaire = doubleval($request->horaire);
         $referentiel->validated = intval($request->validated);
         $referentiel->type_id = intval($request->type);
         $referentiel->save();
