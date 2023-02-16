@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidat;
+use App\Models\CandidatFormation;
+use App\Models\Formation;
 use Illuminate\Http\Request;
 
-class CandidatController extends Controller
+class CandidatFormationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        $candidats = Candidat::all();
-        return view('candidat.index', ['candidats'=> $candidats]);
+        //
     }
 
     /**
@@ -25,7 +26,9 @@ class CandidatController extends Controller
      */
     public function create()
     {
-        return view('candidat.create');
+        $candidats = Candidat::all();
+        $formations = Formation::all();
+        return view('candidatformation')->with(compact('candidats', 'formations'));
     }
 
     /**
@@ -36,20 +39,13 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
-        $candidat = new Candidat();
-        $candidat->nom = $request->nom;
-        $candidat->prenom = $request->prenom;
-        $candidat->email = $request->email;
-        $candidat->age = intval($request->age);
-        $candidat->sexe = $request->sexe;
-        $candidat->niveau_etude = $request->niveau;
-        $candidat->save();
+        $candidat_formation = new CandidatFormation();
+        $candidat_formation->candidat_id = intval($request->candidat);
+        $candidat_formation->formation_id = intval($request->formation);
 
-
-        return redirect('/candidat/create')->with('flash_message', 'etudiant ajouté');
+        $candidat_formation->save();
+        return redirect('/candidat/formation/create')->with('flash_message', 'ajouté avec succes');
     }
-
-    
 
     /**
      * Display the specified resource.

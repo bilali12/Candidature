@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CandidatFormation extends Model
 {
-    use HasFactory;
+    protected $fillable = ['candidat_id', 'formation_id'];
 }

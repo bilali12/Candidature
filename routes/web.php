@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CandidatController;
+use App\Http\Controllers\CandidatFormationController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\ReferentielController;
 use App\Http\Controllers\TypeController;
@@ -36,3 +37,6 @@ Route::post('/store3', [ReferentielController::class, 'store']);
 Route::get('/type/create', [TypeController::class, 'create'])->name('type.create');
 Route::get('/type/index', [TypeController::class, 'index'])->name('type.index');
 Route::post('/store4', [TypeController::class, 'store']);
+
+Route::get('/candidat/formation/create', [CandidatFormationController::class, 'create'])->name('candidatformation');
+Route::post('/store5', [CandidatFormationController::class, 'store']);
