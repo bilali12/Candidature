@@ -64,12 +64,12 @@
                   <li><a class="dropdown-item" href="{{route('candidatformation')}}">Choix Formation</a></li>
                   <li><a class="dropdown-item" href="{{route('nombredecandidatparformation')}}">Nombre de candidat par formation</a></li>
                   <li><a class="dropdown-item" href="{{route('nombredeformationparref')}}">Nombre de formation par referentiel</a></li>
-                  <li><a class="dropdown-item" href="#">Repartition totale des candidats par sexe</a></li>
-                  <li><a class="dropdown-item" href="#">Repartition des formations par type</a></li>
+                  <li><a class="dropdown-item" href="{{route('repartionsexe')}}">Repartition totale des candidats par sexe</a></li>
+                  <li><a class="dropdown-item" href="">Repartition des formations par type</a></li>
                 </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Graphe</a>
+            <a class="nav-link text-light" href="{{route('trancheDage')}}">Graphe</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="#">Statistique</a>
@@ -86,6 +86,9 @@
     @yield('content')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
 
 </body>
 </html>
