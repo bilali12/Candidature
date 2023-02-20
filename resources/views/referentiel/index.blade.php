@@ -13,8 +13,8 @@
                         <th>Validité</th>
                         <th>Horaire</th>
                         <th>Type</th>
-                        <th>Action</th>
-                        <th>Action</th>
+            
+
                     </thead>
                     <tbody>
                         @foreach ($referentiels as $referentiel )
@@ -35,8 +35,7 @@
                                 @endif
                             @endforeach
 
-                            <td><a href="">editer</a></td>
-                            <td><a href="" class="text-danger">supprimer</a></td>
+
                         </tr>
                         @endforeach
 

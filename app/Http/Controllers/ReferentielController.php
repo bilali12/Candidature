@@ -91,6 +91,9 @@ class ReferentielController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $referentiel = Referentiel::find($id);
+
+        $referentiel->delete();
+        return redirect('/referentiel/index')->with('flash_message', 'referentiel supprimé');
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Type;
 
+use App\Models\Formation;
 use Illuminate\Http\Request;
 
-class TypeController extends Controller
+class FormationIsStartedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
-        return view('Type.index', ['types'=>$types]);
+        $formations = Formation::all();
+        return view('formationistarted', ['formations'=>$formations]);
     }
 
     /**
@@ -25,7 +25,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('Type.create');
+        //
     }
 
     /**
@@ -36,11 +36,7 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        $type = new Type();
-        $type->libelle = $request->libelle;
-
-        $type->save();
-        return redirect('type/create')->with('flash_message', 'type ajouté');
+        //
     }
 
     /**
@@ -85,9 +81,6 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        $type = Type::find($id);
-
-        $type->delete();
-        return redirect('/type/index')->with('flash_message', 'type supprimé');
+        //
     }
 }

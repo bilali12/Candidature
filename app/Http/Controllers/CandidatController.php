@@ -49,7 +49,7 @@ class CandidatController extends Controller
         return redirect('/candidat/create')->with('flash_message', 'etudiant ajouté');
     }
 
-    
+
 
     /**
      * Display the specified resource.
@@ -93,6 +93,9 @@ class CandidatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $candidat = Candidat::find($id);
+
+        $candidat->delete();
+        return redirect('/candidat/index')->with('flash_message', 'etudiant supprimé');
     }
 }

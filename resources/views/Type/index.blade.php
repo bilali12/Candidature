@@ -11,15 +11,15 @@
                         <th>N°</th>
                         <th>Libelle</th>
                         <th>Action</th>
-                        <th>Action</th>
+
                     </thead>
                     <tbody>
                         @foreach ($types as $type )
                         <tr>
                             <td>{{$type->id}}</td>
                             <td>{{$type->libelle}}</td>
-                            <td><a href="">editer</a></td>
-                            <td><a href="" class="text-danger">supprimer</a></td>
+
+                            <td><a href="{{ route('type.destroy',['id' =>$type->id ]) }}" class="text-danger">supprimer</a></td>
                         </tr>
                         @endforeach
 

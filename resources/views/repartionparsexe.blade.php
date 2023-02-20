@@ -1,21 +1,22 @@
 @extends('layout.app')
 @section('content')
 
-<?php $sexe_1 = $candidats[0]->sexe ?>
-<?php $sexe_2 = $candidats[0]->sexe ?>
-<?php $cpt = 0?>
-<?php $cpt_sexe_1 = 0 ?>;
+@php $sexe_1 = $candidats[0]->sexe @endphp
+@php $sexe_2 = $candidats[0]->sexe @endphp
+@php $cpt = 0 @endphp
+@php $cpt_sexe_1 = 0 @endphp
 @foreach ($candidats as $candidat )
-    <?php $cpt = $cpt + 1?>
+    @php $cpt = $cpt + 1 @endphp
     @if ($candidat->sexe != $sexe_1 )
-        <?php $sexe_2 = $candidat->sexe ?>
+    @php $sexe_2 = $candidat->sexe @endphp
     @endif
 
     @if ($candidat->sexe == $sexe_1 )
-        <?php $cpt_sexe_1 = $cpt_sexe_1 + 1  ?>
+    @php $cpt_sexe_1 = $cpt_sexe_1 + 1 @endphp
     @endif
 @endforeach
 <div class="container col-md-6">
+    <div class="card"><h4>Repartition des candidats par sexe</h4></div>
     <canvas id="pieCanvas" aria-label="chart" role="img"></canvas>
 </div>
 

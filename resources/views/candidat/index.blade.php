@@ -16,7 +16,6 @@
                         <th>Age</th>
                         <th>Sexe</th>
                         <th>Action</th>
-                        <th>Action</th>
                     </thead>
                     <tbody>
                         @foreach ($candidats as $candidat )
@@ -28,8 +27,7 @@
                             <td>{{$candidat->niveau_etude}}</td>
                             <td>{{$candidat->age}}</td>
                             <td>{{$candidat->sexe}}</td>
-                            <td><a href="">editer</a></td>
-                            <td><a href="" class="text-danger">supprimer</a></td>
+                            <td><a href="{{ route('candidat.destroy',['id' =>$candidat->id ]) }}" class="text-danger">supprimer</a></td>
                         </tr>
                         @endforeach
 

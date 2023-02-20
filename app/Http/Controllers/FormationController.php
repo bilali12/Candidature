@@ -94,6 +94,10 @@ class FormationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $formation = Formation::find($id);
+
+        $formation->delete();
+
+        return redirect('/formation/index')->with('flash_message', 'formation supprimée');
     }
 }

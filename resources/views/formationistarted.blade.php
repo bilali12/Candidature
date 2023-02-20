@@ -2,39 +2,35 @@
 @section('content')
 
 @php
-
-    $tranches = array(
-    "15-18" => 0,
-    "19-25" => 0,
-    "26-35" => 0
-);
+    $is_started = $formations[0]->is_started;
+    $is_not_started = $formations[0]->is_started;
+    $started = array(
+        "1" => 0,
+        "0" => 0
+    );
 
 @endphp
 
-@foreach ($candidats as $candidat)
-@php
-    $age = $candidat->age
-@endphp
-@if ($age >= 15 && $age <=18)
-    @php
-        $tranches["15-18"]++;
-    @endphp
-@endif
-@if ($age >= 19 && $age <=25)
-    @php
-        $tranches["19-25"]++;
-    @endphp
-@endif
-@if ($age >= 26 && $age <=35)
-    @php
-        $tranches["26-35"]++;
-    @endphp
-@endif
+
+
+@foreach ($formations as $formation)
+    @if ($formation->is_started != $is_started)
+        @php
+            $is_not_started = $formation->is_started;
+            $started["0"]++;
+        @endphp
+    @endif
+    @if ($formation->is_started == $is_started)
+        @php
+            $started["1"]++;
+        @endphp
+    @endif
 
 @endforeach
 
+
 <div class="container col-md-6">
-    <div class="card"><h4>Graphe representant les tranches d'age</h4></div>
+    <div class="card"><h4>statistique des formations</h4></div>
     <canvas id="barCanvas" aria-label="chart" role="img"></canvas>
 </div>
 
@@ -49,14 +45,12 @@
 
 
             labels: [
-                @foreach ($tranches as $tranche=> $value)
-                        "{{ $tranche}}",
-                    @endforeach
+                "Is started", "Is not started"
             ],
             datasets: [{
                 data: [
-                    @foreach ($tranches as $tranche)
-                        "{{ $tranche}}",
+                    @foreach ($started as $s)
+                        "{{ $s}}",
                     @endforeach
                 ],
                 backgroundColor: ['primary', 'crimson', ],

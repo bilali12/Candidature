@@ -72,7 +72,7 @@
             <a class="nav-link text-light" href="{{route('trancheDage')}}">Graphe</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Statistique</a>
+            <a class="nav-link text-light" href="{{route('formationisstarted')}}">Statistique</a>
           </li>
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>

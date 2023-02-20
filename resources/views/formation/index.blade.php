@@ -16,7 +16,7 @@
                         <th>Date debut</th>
                         <th>Referentiel</th>
                         <th>Action</th>
-                        <th>Action</th>
+                       
                     </thead>
                     <tbody>
                         @foreach ($formations as $formation )
@@ -37,9 +37,7 @@
                             <td>{{$ref->libelle}}</td>
                             @endif
                             @endforeach
-
-                            <td><a href="">editer</a></td>
-                            <td><a href="" class="text-danger">supprimer</a></td>
+                            <td><a href="{{ route('formation.destroy',['id' =>$formation->id ]) }}" class="text-danger">supprimer</a></td>
                         </tr>
                         @endforeach
 
